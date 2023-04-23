@@ -21,7 +21,7 @@ function Signup() {
 
       try {
         
-          if (name == '' || email == '' || password == '')
+          if (!name|| !email  || !password)
               window.alert("Fill all fields");
           else {
               
@@ -39,7 +39,7 @@ function Signup() {
     }
     catch(err) {
       setError(err.message);
-      console.log(err.message);
+      console.log(error);
     }
   }
 

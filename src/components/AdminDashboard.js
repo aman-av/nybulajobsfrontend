@@ -1,6 +1,5 @@
-import React,{useState,useEffect} from "react";
-import { Button, Form,Table } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import React,{useState} from "react";
+import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 function AdminDashboard() {
     const [email, setEmail] = useState('');
@@ -8,7 +7,6 @@ function AdminDashboard() {
     const [name, setName] = useState('');
     const [error, setError] = useState('');
     
-    const navigate = useNavigate();
 
     
   
@@ -18,7 +16,7 @@ function AdminDashboard() {
        
         try {
         
-            if (name == '' || email == '' || password == '')
+            if (!name || !email || !password )
                 window.alert("Fill all fields");
             else {
               
@@ -29,12 +27,13 @@ function AdminDashboard() {
                     'password': password,
                     'type': 'terraformer'
                 }
-                const response = await axios.post('https://elegant-tank-top-fish.cyclic.app/signup', newuser);
+                // const response =
+                    await axios.post('https://elegant-tank-top-fish.cyclic.app/signup', newuser);
             }
         }
         catch (err) {
             setError(err.message);
-            console.log(err.message);
+            console.log(error);
         }
     }
        

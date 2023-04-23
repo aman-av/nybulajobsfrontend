@@ -16,7 +16,7 @@ function Signin() {
     setError('');
 
       try {
-         if (email == '' || password == '')
+         if (!email  || !password)
               window.alert("Fill all fields");
           {
                const user = {
@@ -31,7 +31,7 @@ function Signin() {
     }
     catch(err) {
       setError(err.message);
-      console.log(err.message);
+      console.log(error);
     }
   }
 
