@@ -24,10 +24,6 @@ function Draganddrop() {
     const updatelist = async () => {
         await axios.post('http://localhost:8000/jobs/updateorder', listitem);
     }
-    useEffect(() => {
-        if(listitem.length>0)
-        updatelist();
-    }, [listitem]);
     
   return (
     <DndContext
@@ -62,7 +58,7 @@ function Draganddrop() {
         // items: [2, 3, 1]   0  -> 2
         // [1, 2, 3] oldIndex: 0 newIndex: 2  -> [2, 3, 1] 
       });
-      
+        updatelist();
     }
   }
 }
