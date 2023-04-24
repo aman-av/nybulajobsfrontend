@@ -24,7 +24,7 @@ function TerraformerDashboard() {
             
       }
       console.log(newJob)
-      const response = await axios.post('https://nybulajobsbackend.cyclic.app/jobs/createnew', newJob);
+      await axios.post('https://nybulajobsbackend.cyclic.app/jobs/createnew', newJob);
       setKey(key + 1);
     }
   }
