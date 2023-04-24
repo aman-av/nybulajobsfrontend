@@ -1,5 +1,10 @@
 # nybulajobsfrontend
 
+paths - /dashboard  - common of user,admin,terraformers
+        /terraformerdashboard  - for admin and terraformers to add new job and adjust the list using drag and drop
+        /admin - only accessible to admin admin@admin.com to add new terraformer account
+
+
 #Login Page
 
   Common test Password - 12345678
