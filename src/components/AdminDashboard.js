@@ -28,7 +28,7 @@ function AdminDashboard() {
                     'type': 'terraformer'
                 }
                 // const response =
-                    await axios.post('https://elegant-tank-top-fish.cyclic.app/signup', newuser);
+                    await axios.post('https://nybulajobsbackend.cyclic.app/signup', newuser);
             }
         }
         catch (err) {

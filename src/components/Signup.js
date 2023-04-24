@@ -32,7 +32,7 @@ function Signup() {
             'password': password,
             'type':'user'
             }
-            const response = await axios.post('https://elegant-tank-top-fish.cyclic.app/signup', newuser);
+            const response = await axios.post('https://nybulajobsbackend.cyclic.app/signup', newuser);
           await signIn(response.data.user);
             navigate('/dashboard');
         }

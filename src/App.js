@@ -13,7 +13,7 @@ import AdminaccessRoute from './components/AdminaccessRoute';
 import ProtectedRoute2 from './components/ProtectedRoute2'
 function App() {
   return (
-    <div>
+    <div style={{backgroundColor:"aliceblue"}}>
       <Container fluid>
         <AuthContextProvider>
 

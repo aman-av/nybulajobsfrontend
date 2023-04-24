@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Form ,Modal,Button} from 'react-bootstrap';
+import { Form, Modal, Button } from 'react-bootstrap';
+import axios from 'axios';
+import Draganddrop from './Draganddrop';
 function TerraformerDashboard() {
  const [show, setShow] = useState(false);
 
@@ -22,9 +24,11 @@ function TerraformerDashboard() {
             
       }
       console.log(newJob)
-      // const response = await axios.post('https://elegant-tank-top-fish.cyclic.app/jobs/createnew',newJob);
+      const response = await axios.post('https://nybulajobsbackend.cyclic.app/jobs/createnew', newJob);
+      setKey(key + 1);
     }
   }
+  const [key, setKey] = useState(0);
   const [title, setTitle] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
@@ -34,8 +38,8 @@ function TerraformerDashboard() {
   
 
   return (
-    <div>
-      <div style={{margin:'5%'}}>
+    <div style={{backgroundImage:`url${(require('../assets/nebula.jpg'))}`}}>
+      <div style={{margin:'2% 5%'}}>
 
       <Button variant="primary" onClick={handleShow}>
           Add new job
@@ -90,6 +94,8 @@ function TerraformerDashboard() {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Draganddrop key={key} />
     </div>
   );
 
