@@ -12,7 +12,7 @@ function Dashboard() {
         const response = await axios.get('https://nybulajobsbackend.cyclic.app/jobs/getorder');
       const response2 = await axios.get('https://nybulajobsbackend.cyclic.app/jobs/alljobs');
       let user = JSON.parse(localStorage.getItem('user'));
-       const resp = await axios.post('http://localhost:8000/jobs/getjobsapplied',{userid:user._id});
+       const resp = await axios.post('https://nybulajobsbackend.cyclic.app/jobs/getjobsapplied',{userid:user._id});
     setAlreadyapplied(resp.data);
         console.log(response2)
         console.log(response)
@@ -25,8 +25,8 @@ function Dashboard() {
   
   const handleClick = async(item) => {
     let user = JSON.parse(localStorage.getItem('user'));
-    await axios.post('http://localhost:8000/jobs/jobsapplied', { jobid: item,userid:user._id });
-    const resp = await axios.post('http://localhost:8000/jobs/getjobsapplied',{userid:user._id});
+    await axios.post('https://nybulajobsbackend.cyclic.app/jobs/jobsapplied', { jobid: item,userid:user._id });
+    const resp = await axios.post('https://nybulajobsbackend.cyclic.app/jobs/getjobsapplied',{userid:user._id});
     setAlreadyapplied(resp.data);
   }
   

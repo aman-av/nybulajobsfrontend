@@ -22,7 +22,7 @@ function Draganddrop() {
     }, []);
     
     const updatelist = async () => {
-        await axios.post('http://localhost:8000/jobs/updateorder', listitem);
+        await axios.post('https://nybulajobsbackend.cyclic.app/jobs/updateorder', listitem);
     }
     
   return (
