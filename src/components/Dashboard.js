@@ -33,7 +33,7 @@ function Dashboard() {
   return <div>
     <h1 style={{textAlign:'center',margin:'2% 5%'}}>Nybula Jobs Portal</h1>
     {listitem ? listitem.map(item => 
-    <Card style={{backgroundColor:jobdata[item].color}} body className="m-3">
+    <Card disable={jobdata[item].color===undefined} style={{backgroundColor:''||jobdata[item].color}} body className="m-3">
                 <Row>
                 
                     <h4>Title  :  {jobdata[item].title}</h4>
